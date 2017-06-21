@@ -2,7 +2,8 @@ from flask import redirect, request, render_template, Response, session
 from functools import wraps
 from bot import create_app
 from bot.app_config import ADMIN_USER, ADMIN_PASS, SECRET_KEY, \
-                                    TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NO
+                                    TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NO, \
+                                    GDOC_ID
 import twilio.twiml
 from twilio.rest import TwilioRestClient
 
@@ -11,7 +12,6 @@ application = create_app()
 
 @application.route("/")
 def index():
-    # TODO: grab some recordings to show
     return render_template('index.html')
 
 
@@ -27,14 +27,15 @@ def respond():
 
     # this clears all cookies
     if(incoming_msg=='clear'):
-        session['seen_prompt'] = False
-        session['gave_rec'] = False
-        session['extra_msg'] = False
+        session['has_texted'] = False
         resp.sms("erasing my memory of our conversation")
         return str(resp)
+    elif session.get('has_texted') == True:
+        resp.sms("hello again")
+    else:
+        session['has_texted'] = True
+        resp.sms("hello world")
 
-
-    resp.sms("hello world")
 
     return str(resp)
 
@@ -66,6 +67,21 @@ def requires_auth(f):
 # def review():
 #     return render_template('review.html')
 
+@application.route('/grabcsv')
+@requires_auth
+def grab_csv():
+    import requests
+
+    url = "https://docs.google.com/spreadsheets/d/{}/export?format=csv".format(GDOC_ID)
+    r = requests.get(url)
+    data = r.content
+
+    outfile = 'bot/data/resources.csv'
+    with open(outfile, 'wb') as f:
+        f.write(data)
+
+    # TODO: error handling, flash message with success/failure
+    return render_template('index.html')
 
 
 
