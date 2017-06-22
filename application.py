@@ -1,6 +1,6 @@
 from flask import redirect, request, render_template, Response, session
 from functools import wraps
-from bot import create_app
+from bot import create_app, RESOURCE_DATA
 from bot.app_config import ADMIN_USER, ADMIN_PASS, SECRET_KEY, \
                                     TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NO, \
                                     GDOC_ID
@@ -25,16 +25,40 @@ def respond():
 
     incoming_msg = request.values.get('Body', '')
 
-    # this clears all cookies
     if(incoming_msg=='clear'):
-        session['has_texted'] = False
+        # this clears all cookies
+        session['seen_greeting'] = False
+        session['seen_resources'] = False
         resp.sms("erasing my memory of our conversation")
         return str(resp)
-    elif session.get('has_texted') == True:
-        resp.sms("hello again")
+    elif session.get('seen_resources') == True:
+        # person has responding w/ description of their issue
+        # TODO: store the response here
+        resp.sms("thanks for reporting!")
+    elif session.get('seen_greeting') == True:
+        # person is responding with state
+
+        # TODO: more robust matching here
+        clean_state = incoming_msg.lower().strip()
+        state_info = RESOURCE_DATA.get(clean_state)
+
+        if state_info:
+            session['seen_resources'] = True
+
+            txt = "here are some resources:\n{} - {}"\
+                .format(
+                    state_info['name_press_assn'],
+                    state_info['phone_press_assn']
+                )
+
+            resp.sms(txt)
+            resp.sms("if you'd like, tell us about your issues. [more copy here about how this info will be used]")
+        else:
+            resp.sms("sorry, I don't recognize that state. what state are you in?")
     else:
-        session['has_texted'] = True
-        resp.sms("hello world")
+        # this is the first time someone has texted
+        session['seen_greeting'] = True
+        resp.sms("hello! [intro text here]\nwhat state are you in?")
 
 
     return str(resp)
