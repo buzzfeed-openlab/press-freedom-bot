@@ -1,9 +1,12 @@
 from flask import redirect, request, render_template, Response, session
+from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
 from bot import create_app, RESOURCE_DATA
 from bot.app_config import ADMIN_USER, ADMIN_PASS, SECRET_KEY, \
                                     TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NO, \
                                     GDOC_ID
+from bot.models import Answer
+from bot.database import db
 import twilio.twiml
 from twilio.rest import TwilioRestClient
 
@@ -106,6 +109,14 @@ def grab_csv():
 
     # TODO: error handling, flash message with success/failure
     return render_template('index.html')
+
+
+@application.route('/initialize')
+@requires_auth
+def initialize():
+    db.create_all()
+    # TODO: flash message
+    return redirect('/')
 
 
 
