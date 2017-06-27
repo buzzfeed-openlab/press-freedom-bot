@@ -32,11 +32,23 @@ def respond():
         # this clears all cookies
         session['seen_greeting'] = False
         session['seen_resources'] = False
+        session['state'] = ''
         resp.sms("erasing my memory of our conversation")
         return str(resp)
     elif session.get('seen_resources') == True:
         # person has responding w/ description of their issue
-        # TODO: store the response here
+
+        # only if there is an incoming msg
+        if incoming_msg:
+            new_report = Answer(
+                    request.values.get('SmsSid'),
+                    request.values.get('From'),
+                    session.get('state'),
+                    incoming_msg
+                )
+            db.session.add(new_report)
+            db.session.commit()
+
         resp.sms("thanks for reporting!")
     elif session.get('seen_greeting') == True:
         # person is responding with state
@@ -47,6 +59,7 @@ def respond():
 
         if state_info:
             session['seen_resources'] = True
+            session['state'] = clean_state
 
             txt = "here are some resources:\n{} - {}"\
                 .format(
