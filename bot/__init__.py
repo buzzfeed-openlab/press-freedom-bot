@@ -3,6 +3,7 @@ from .app_config import DB_USER, DB_PW, DB_HOST, DB_NAME
 import csv
 import os
 import re
+import us
 
 def create_app():
     app = Flask(__name__)
@@ -19,10 +20,10 @@ RESOURCE_DATA = {}
 with open(os.path.dirname(__file__)+'/data/resources.csv') as f:
     reader = csv.DictReader(f)
     for row in reader:
-        # TODO: use state codes as keys
-        state_slug = re.sub(r'[^a-z]+', '_', row['state'].lower().strip())
 
-        RESOURCE_DATA[state_slug] = {
+        state_abbr = us.states.lookup(row['state']).abbr
+
+        RESOURCE_DATA[state_abbr] = {
             'name_press_assn': row['name_press_assn'],
             'phone_press_assn': row['phone_press_assn'],
             'name_atty_gen': row['name_atty_gen'],

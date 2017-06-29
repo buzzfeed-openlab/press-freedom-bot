@@ -10,6 +10,7 @@ from bot.database import db
 import twilio.twiml
 from twilio.rest import TwilioRestClient
 import re
+import us
 
 
 application = create_app()
@@ -54,22 +55,31 @@ def respond():
     elif session.get('seen_greeting') == True:
         # person is responding with state
 
-        # TODO: more robust matching here
-        state_slug = re.sub(r'[^a-z]+', '_', incoming_msg.lower().strip())
-        state_info = RESOURCE_DATA.get(state_slug)
+        state = us.states.lookup(incoming_msg)
+        state_info = RESOURCE_DATA.get(state.abbr) if state else None
 
         if state_info:
             session['seen_resources'] = True
-            session['state'] = state_slug
+            session['state'] = state.abbr
 
-            # TODO: deal with missing resources
-            txt = "here are some resources:\n{} - {}\n{} - {}"\
-                .format(
-                    state_info['name_press_assn'],
-                    state_info['phone_press_assn'],
-                    state_info['name_atty_gen'],
-                    state_info['phone_atty_gen']
-                )
+            resource_list = []
+            if state_info['name_press_assn'] and state_info['phone_press_assn']:
+                more_info = "{} - {}".format(
+                        state_info['name_press_assn'],
+                        state_info['phone_press_assn'])
+                resource_list.append(more_info)
+            if state_info['name_atty_gen'] and state_info['phone_atty_gen']:
+                more_info = "{} AG {} - {}".format(
+                        state.abbr,
+                        state_info['name_atty_gen'],
+                        state_info['phone_atty_gen'])
+                resource_list.append(more_info)
+
+            if resource_list:
+                resource_list.insert(0, "here are some resources:")
+                txt = '\n\n'.join(resource_list)
+            else:
+                txt = "no resources yet for {}".format(state.name)
 
             resp.sms(txt)
             resp.sms("if you'd like, tell us about your issues. [more copy here about how this info will be used]")
