@@ -19,6 +19,7 @@ RESOURCE_DATA = {}
 with open(os.path.dirname(__file__)+'/data/resources.csv') as f:
     reader = csv.DictReader(f)
     for row in reader:
+        # TODO: use state codes as keys
         state_slug = re.sub(r'[^a-z]+', '_', row['state'].lower().strip())
 
         RESOURCE_DATA[state_slug] = {

@@ -9,6 +9,7 @@ from bot.models import Answer
 from bot.database import db
 import twilio.twiml
 from twilio.rest import TwilioRestClient
+import re
 
 
 application = create_app()
@@ -54,17 +55,20 @@ def respond():
         # person is responding with state
 
         # TODO: more robust matching here
-        clean_state = incoming_msg.lower().strip()
-        state_info = RESOURCE_DATA.get(clean_state)
+        state_slug = re.sub(r'[^a-z]+', '_', incoming_msg.lower().strip())
+        state_info = RESOURCE_DATA.get(state_slug)
 
         if state_info:
             session['seen_resources'] = True
-            session['state'] = clean_state
+            session['state'] = state_slug
 
-            txt = "here are some resources:\n{} - {}"\
+            # TODO: deal with missing resources
+            txt = "here are some resources:\n{} - {}\n{} - {}"\
                 .format(
                     state_info['name_press_assn'],
-                    state_info['phone_press_assn']
+                    state_info['phone_press_assn'],
+                    state_info['name_atty_gen'],
+                    state_info['phone_atty_gen']
                 )
 
             resp.sms(txt)
@@ -102,10 +106,11 @@ def requires_auth(f):
         return f(*args, **kwargs)
     return decorated
 
-# @application.route('/review')
-# @requires_auth
-# def review():
-#     return render_template('review.html')
+@application.route('/reports')
+@requires_auth
+def reports():
+    reports = Answer.query.all()
+    return render_template('reports.html', reports=reports)
 
 @application.route('/grabcsv')
 @requires_auth

@@ -4,9 +4,12 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <h1>Press Freedom Bot - Home</h1>
+      <h1>Reports</h1>
       <hr/>
-      <a href="{{url_for('reports')}}">Review reports</a>
+
+      {% for r in reports %}
+      <p>{{r.answer_text}} | {{r.from_state}} | {{r.from_number}}</p>
+      {% endfor %}
     </div>
   </div>
 </div>
