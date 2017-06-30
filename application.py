@@ -1,7 +1,7 @@
-from flask import redirect, request, render_template, Response, session
+from flask import flash, redirect, request, render_template, Response, session
 from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
-from bot import create_app, RESOURCE_DATA
+from bot import create_app, resource_csv2dict
 from bot.app_config import ADMIN_USER, ADMIN_PASS, SECRET_KEY, \
                                     TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NO, \
                                     GDOC_ID
@@ -56,7 +56,9 @@ def respond():
         # person is responding with state
 
         state = us.states.lookup(incoming_msg)
-        state_info = RESOURCE_DATA.get(state.abbr) if state else None
+        # TODO: smarter way of doing this?
+        resource_data = resource_csv2dict()
+        state_info = resource_data.get(state.abbr) if state else None
 
         if state_info:
             session['seen_resources'] = True
@@ -131,19 +133,25 @@ def grab_csv():
     r = requests.get(url)
     data = r.content
 
-    outfile = 'bot/data/resources.csv'
-    with open(outfile, 'wb') as f:
-        f.write(data)
+    if r.status_code==200:
 
-    # TODO: error handling, flash message with success/failure
-    return render_template('index.html')
+        outfile = 'bot/data/resources.csv'
+        with open(outfile, 'wb') as f:
+            f.write(data)
+
+        flash("resources CSV updated!")
+
+    else:
+        flash("ERROR: couldn't download CSV. check GDOC_ID to make sure it is valid")
+
+    return redirect('/')
 
 
 @application.route('/initialize')
 @requires_auth
 def initialize():
     db.create_all()
-    # TODO: flash message
+    flash("db initialized!")
     return redirect('/')
 
 

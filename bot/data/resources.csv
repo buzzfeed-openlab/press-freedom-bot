@@ -1,51 +1,51 @@
-state,name_press_assn,phone_press_assn,name_atty_gen,phone_atty_gen,url_reporters_committee
-Alabama,Alabama Press Association,[PA number for Alabama],Alabama Attorney General,[AG number for Alabama],[url for Alabama]
-Alaska,Alaska Press Association,[PA number for Alaska],Alaska Attorney General,[AG number for Alaska],[url for Alaska]
-Arizona,Arizona Press Association,[PA number for Arizona],Arizona Attorney General,[AG number for Arizona],[url for Arizona]
-Arkansas,Arkansas Press Association,[PA number for Arkansas],Arkansas Attorney General,[AG number for Arkansas],[url for Arkansas]
-California,California Press Association,[PA number for California],California Attorney General,[AG number for California],[url for California]
-Colorado,Colorado Press Association,[PA number for Colorado],Colorado Attorney General,[AG number for Colorado],[url for Colorado]
-Connecticut,Connecticut Press Association,[PA number for Connecticut],Connecticut Attorney General,[AG number for Connecticut],[url for Connecticut]
-Delaware,Delaware Press Association,[PA number for Delaware],Delaware Attorney General,[AG number for Delaware],[url for Delaware]
-Florida,Florida Press Association,[PA number for Florida],Florida Attorney General,[AG number for Florida],[url for Florida]
-Georgia,Georgia Press Association,[PA number for Georgia],Georgia Attorney General,[AG number for Georgia],[url for Georgia]
-Hawaii,Hawaii Press Association,[PA number for Hawaii],Hawaii Attorney General,[AG number for Hawaii],[url for Hawaii]
-Idaho,Idaho Press Association,[PA number for Idaho],Idaho Attorney General,[AG number for Idaho],[url for Idaho]
-Illinois,Illinois Press Association,[PA number for Illinois],Illinois Attorney General,[AG number for Illinois],[url for Illinois]
-Indiana,Indiana Press Association,[PA number for Indiana],Indiana Attorney General,[AG number for Indiana],[url for Indiana]
-Iowa,Iowa Press Association,[PA number for Iowa],Iowa Attorney General,[AG number for Iowa],[url for Iowa]
-Kansas,Kansas Press Association,[PA number for Kansas],Kansas Attorney General,[AG number for Kansas],[url for Kansas]
-Kentucky,Kentucky Press Association,[PA number for Kentucky],Kentucky Attorney General,[AG number for Kentucky],[url for Kentucky]
-Louisiana,Louisiana Press Association,[PA number for Louisiana],Louisiana Attorney General,[AG number for Louisiana],[url for Louisiana]
-Maine,Maine Press Association,[PA number for Maine],Maine Attorney General,[AG number for Maine],[url for Maine]
-Maryland,Maryland Press Association,[PA number for Maryland],Maryland Attorney General,[AG number for Maryland],[url for Maryland]
-Massachusetts,Massachusetts Press Association,[PA number for Massachusetts],Massachusetts Attorney General,[AG number for Massachusetts],[url for Massachusetts]
-Michigan,Michigan Press Association,[PA number for Michigan],Michigan Attorney General,[AG number for Michigan],[url for Michigan]
-Minnesota,Minnesota Press Association,[PA number for Minnesota],Minnesota Attorney General,[AG number for Minnesota],[url for Minnesota]
-Mississippi,Mississippi Press Association,[PA number for Mississippi],Mississippi Attorney General,[AG number for Mississippi],[url for Mississippi]
-Missouri,Missouri Press Association,[PA number for Missouri],Missouri Attorney General,[AG number for Missouri],[url for Missouri]
-Montana,Montana Press Association,[PA number for Montana],Montana Attorney General,[AG number for Montana],[url for Montana]
-Nebraska,Nebraska Press Association,[PA number for Nebraska],Nebraska Attorney General,[AG number for Nebraska],[url for Nebraska]
-Nevada,Nevada Press Association,[PA number for Nevada],Nevada Attorney General,[AG number for Nevada],[url for Nevada]
-New Hampshire,New Hampshire Press Association,[PA number for New Hampshire],New Hampshire Attorney General,[AG number for New Hampshire],[url for New Hampshire]
-New Jersey,New Jersey Press Association,[PA number for New Jersey],New Jersey Attorney General,[AG number for New Jersey],[url for New Jersey]
-New Mexico,New Mexico Press Association,[PA number for New Mexico],New Mexico Attorney General,[AG number for New Mexico],[url for New Mexico]
-New York,New York Press Association,[PA number for New York],New York Attorney General,[AG number for New York],[url for New York]
-North Carolina,North Carolina Press Association,[PA number for North Carolina],North Carolina Attorney General,[AG number for North Carolina],[url for North Carolina]
-North Dakota,North Dakota Press Association,[PA number for North Dakota],North Dakota Attorney General,[AG number for North Dakota],[url for North Dakota]
-Ohio,Ohio Press Association,[PA number for Ohio],Ohio Attorney General,[AG number for Ohio],[url for Ohio]
-Oklahoma,Oklahoma Press Association,[PA number for Oklahoma],Oklahoma Attorney General,[AG number for Oklahoma],[url for Oklahoma]
-Oregon,Oregon Press Association,[PA number for Oregon],Oregon Attorney General,[AG number for Oregon],[url for Oregon]
-Pennsylvania,Pennsylvania Press Association,[PA number for Pennsylvania],Pennsylvania Attorney General,[AG number for Pennsylvania],[url for Pennsylvania]
-Rhode Island,Rhode Island Press Association,[PA number for Rhode Island],Rhode Island Attorney General,[AG number for Rhode Island],[url for Rhode Island]
-South Carolina,South Carolina Press Association,[PA number for South Carolina],South Carolina Attorney General,[AG number for South Carolina],[url for South Carolina]
-South Dakota,South Dakota Press Association,[PA number for South Dakota],South Dakota Attorney General,[AG number for South Dakota],[url for South Dakota]
-Tennessee,Tennessee Press Association,[PA number for Tennessee],Tennessee Attorney General,[AG number for Tennessee],[url for Tennessee]
-Texas,Texas Press Association,[PA number for Texas],Texas Attorney General,[AG number for Texas],[url for Texas]
-Utah,Utah Press Association,[PA number for Utah],Utah Attorney General,[AG number for Utah],[url for Utah]
-Vermont,Vermont Press Association,[PA number for Vermont],Vermont Attorney General,[AG number for Vermont],[url for Vermont]
-Virginia,Virginia Press Association,[PA number for Virginia],Virginia Attorney General,[AG number for Virginia],[url for Virginia]
-Washington,Washington Press Association,[PA number for Washington],Washington Attorney General,[AG number for Washington],[url for Washington]
-West Virginia,West Virginia Press Association,[PA number for West Virginia],West Virginia Attorney General,[AG number for West Virginia],[url for West Virginia]
-Wisconsin,Wisconsin Press Association,[PA number for Wisconsin],Wisconsin Attorney General,[AG number for Wisconsin],[url for Wisconsin]
-Wyoming,Wyoming Press Association,[PA number for Wyoming],Wyoming Attorney General,[AG number for Wyoming],[url for Wyoming]
+state,name_press_assn,phone_press_assn,name_atty_gen,phone_atty_gen,email_atty_gen,url_reporters_committee,link_statute,url_fulltext_statute
+Alabama,Alabama Press Association,(205) 871-7737,Steve Marshall,(334) 242-7300,MikeLewis@ago.state.al.us - press department contact,https://www.rcfp.org/alabama-open-government-guide,Ala. Code § 36-12-40,http://alisondb.legislature.state.al.us/alison/codeofalabama/1975/36-12-40.htm
+Alaska,Alaska Department of Public Safety - Public Information Office,(907) 465-4322,Jahna Lindemuth,(907) 269-5100,attorney.general@alaska.gov,https://www.rcfp.org/alaska-open-government-guide,AS §§ 40.25.100 to 350,http://www.legis.state.ak.us/basis/statutes.asp#40.25.105
+Arizona,Arizona Office of the Secretary of State,(602) 542-0681,Mark Brnovich,(602) 542-5025,PublicRecords@azag.gov,https://www.rcfp.org/arizona-open-government-guide,Ariz. Rev. Stat. Ann. § 39-121.01,http://www.azleg.gov/arsDetail/?title=39
+Arkansas,Arkansas Press Association,(501) 374-1500,Leslie Rutledge,(501) 682-2007,OAG@ArkansasAG.gov,https://www.rcfp.org/arkansas-open-government-guide,"Arkansas Freedom of Information Act, Ark. Code Ann. §§ 25-19-101 to 25-19-109.",http://c.ymcdn.com/sites/www.arkansaspress.org/resource/resmgr/Publications-2015/foi-17ed.pdf
+California,California Fair Political Practices Commission,(916) 322-5660,Xavier Becerra,(916) 322-3360,N/A,https://www.rcfp.org/california-open-government-guide,"California Public Records Act, Cal. Govt. Code §§ 6250 to 6276.48.",https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=7.&chapter=3.5.&lawCode=GOV&title=1.&article=1.
+Colorado,Colorado Secretary of State Office,(303) 894-2200,Cynthia H. Coffman,(720) 508-6000,annie.skinner@coag.gov - press department contact,https://www.rcfp.org/colorado-open-government-guide,"Colorado Open Records Act, C.R.S. §§ 24-72-201 to 24-72-309.",https://www.sos.state.co.us/pubs/info_center/files/CORA_Act.pdf
+Connecticut,Conneticut Freedom of Information Commission ,(860) 566-5682,George Jepsen,(860) 808-5318,N/A,https://www.rcfp.org/connecticut-open-government-guide,"Connecticut Freedom of Information Act (FOIA), Conn. Gen. Stat. §§ 1-200 to 1-242",http://www.ct.gov/foi/cwp/view.asp?a=4163&Q=507660
+Delaware,Delaware Department of State - FOIA Division,(302) 739-8436,Matthew P. Denn,(302) 577-8400,attorney.general@state.de.us,https://www.rcfp.org/delaware-open-government-guide,"Delaware Freedom of Information Act (FOIA), Del. Code Ann. 29 § 10001 to 10006.",http://delcode.delaware.gov/title29/c100/
+Florida,Florida Press Association,(321) 283-5255,Pam Bondi,(850) 414-3300,http://myfloridalegal.com/contact.nsf/contact?Open&Section=Attorney_General,https://www.rcfp.org/florida-open-government-guide,Fla. Stat. Sec. 119,http://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&URL=0200-0299/0286/Sections/0286.011.html
+Georgia,Georgia Press Association ,(770) 454-6776,Chris Carr,(404) 656-3300,N/A,https://www.rcfp.org/georgia-open-government-guide,"Georgia Open Records Act, O.C.G.A. § 50-18-70.",http://law.justia.com/codes/georgia/2010/title-50/chapter-18/article-4/50-18-70
+Hawaii,Hawaii Office of Information Practices ,(808) 586-1400,Doug Chin,(808) 586-1500,http://ag.hawaii.gov/contact-us/email-the-department-of-ag/,https://www.rcfp.org/hawaii-open-government-guide,"Uniform Information Practices Act, Haw. Rev. Stat. § 92F-1 to 92F-42",http://oip.hawaii.gov/laws-rules-opinions/uipa/uniform-information-practices-act-uipa/
+Idaho,Newspaper Association of Idaho,(208) 345-9929,Lawrence G. Wasden ,(208) 334-2400,http://www.ag.idaho.gov/onlineForms/contactAG.htm,https://www.rcfp.org/idaho-open-government-guide,Idaho Code § 9-337 to 9-350,https://history.idaho.gov/sites/default/files/uploads/PublicRecordslaw_0.pdf
+Illinois,Illinois Press Association,(217) 241-1300,Lisa Madigan,(877) 299-3642,http://www.illinoisattorneygeneral.gov/about/email_ag.jsp,https://www.rcfp.org/illinois-open-government-guide,Freedom of Information Act 5 ILCS 140/1 to 140/11.5,http://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=85&ChapterID=2
+Indiana,Indiana Public Access Counselor ,(317) 234-0906,Curtis Hill,(317) 232-6330,http://www.in.gov/attorneygeneral/3063.htm,https://www.rcfp.org/indiana-open-government-guide,Ind. Code § 5-14-3 to 5-14-3-10,https://iga.in.gov/static-documents/0/8/2/b/082bff0b/TITLE5_AR14_ch3.pdf
+Iowa,Iowa Public Information Board ,(515) 725-1781,Tom Miller ,(515) 281-5164,webteam@iowa.gov,https://www.rcfp.org/iowa-open-government-guide,Iowa Open Records Law § 22.1 et seq.,https://www.ipib.iowa.gov/chapter-22-text-version
+Kansas,Kansas Sunshine Coalition for Open Government,(785) 217-3878,Derek Schmidt,(785) 296-2215,https://ag.ks.gov/about-the-office/contact-us/email-us,https://www.rcfp.org/kansas-open-government-guide,K.S.A. 45-215 et seq.,http://www.kslegislature.org/li_2014/b2013_14/statute/045_000_0000_chapter/045_002_0000_article/045_002_0015_section/045_002_0015_k/
+Kentucky,Kentucky Press Association ,(502) 223-8821,Andy Beshear,(502) 429-7134,http://ag.ky.gov/Pages/contact.aspx,https://www.rcfp.org/kentucky-open-government-guide,K.R.S. 61.872 et seq.,http://www.lrc.ky.gov/lrcpubs/openmtgsrecords.pdf
+Louisiana,Public Affairs Research Council of Louisiana,(225) 926.8414,Jeff Landry ,(225) 326-6725,admininfo@ag.state.la.us,https://www.rcfp.org/louisiana-open-government-guide,Louisiana Public Records Act § 44:1 et seq.,http://www.legis.la.gov/legis/Law.aspx?d=99632
+Maine,Maine Press Association,(207) 691-0131,Janet T. Mills ,(207) 626-8800,http://www.maine.gov/ag/contact.html,https://www.rcfp.org/maine-open-government-guide,M.R.S.A. Sec. 402 et seq.,http://www.mainelegislature.org/legis/statutes/1/title1ch13sec0.html
+Maryland,Maryland Press Association ,(855) 721-MDDC,Brian E. Frosh ,(410) 576-6300,press@oag.state.md.us,https://www.rcfp.org/maryland-open-government-guide,Md. State Gov't Code Ann. §§10-611 et seq.,http://www.marylandattorneygeneral.gov/Pages/OpenGov/piaManual.aspx
+Massachusetts,New England First Amendment Coalition,(508) 983-6006,Maura Healey,(617) 727-2200,ago@state.ma.us,https://www.rcfp.org/massachusetts-open-government-guide,"G.L. c. 66, sec. 10.",https://malegislature.gov/Laws/GeneralLaws/PartI/TitleX/Chapter66/Section10
+Michigan,Michigan Press Association,(517) 372-2424,Bill Schuette,(517) 373-1110,miag@michigan.gov,https://www.rcfp.org/michigan-open-government-guide,Mich. Comp. Laws Ann. §15.231 etseq,http://www.legislature.mi.gov/(S(x5gcnmbigjn5b2p4cye2nmu0))/mileg.aspx?page=GetObject&objectname=mcl-act-442-of-1976
+Minnesota,Minnesota Coalition On Government Information ,(651) 699-6553,Lori Swanson ,(651) 296-3353,Attorney.General@ag.state.mn.us.,https://www.rcfp.org/minnesota-open-government-guide,Minn. Stat. Ann. § 13.03,https://www.revisor.mn.gov/statutes/?id=13.03
+Mississippi,"Mississippi Center for Freedom of Information, Inc.",(662) 915-7146,Jim Hood,(601) 359-3680,http://www.ago.state.ms.us/contact/,https://www.rcfp.org/mississippi-open-government-guide,Miss. Code Ann 25-61-1 et seq.,http://www.mcfoi.org/handbook.html
+Missouri,Missouri Sunshine Coalition,(417) 873-7347,Josh Howley ,(573) 751-3321,attorney.general@ago.mo.gov,https://www.rcfp.org/missouri-open-government-guide,Mo. Code §610.023 et seq.,http://www.moga.mo.gov/mostatutes/chapters/chapText610.html
+Montana,Montana Freedom of Information Hotline,(406) 466-240,Tim Fox ,(406) 444-2026,contactdoj@mt.gov,https://www.rcfp.org/montana-open-government-guide,Montana Code 2-6-101 et seq.,http://leg.mt.gov/bills/2013/mca/2/6/2-6-101.htm
+Nebraska,Nebraska Press Association ,(402) 476-2851,Doug Peterson ,(402) 471-2683,ago.info.help@nebraska.gov,https://www.rcfp.org/nebraska-open-government-guide,Nebraska Statutes §84-712 et seq.,https://nebraska.edu/docs/NebraskaPublicRecordsLaw.pdf
+Nevada,Nevada Press Association ,(775) 885-0866,Adam Paul Laxalt,(775) 684-1100,AgInfo@ag.nv.gov,https://www.rcfp.org/nevada-open-government-guide,N.R.S. 239 et seq.,https://www.leg.state.nv.us/nrs/nrs-239.html
+New Hampshire,,,,,,,,
+New Jersey,,,,,,,,
+New Mexico,,,,,,,,
+New York,,,,,,,,
+North Carolina,,,,,,,,
+North Dakota,,,,,,,,
+Ohio,,,,,,,,
+Oklahoma,,,,,,,,
+Oregon,,,,,,,,
+Pennsylvania,,,,,,,,
+Rhode Island,,,,,,,,
+South Carolina,,,,,,,,
+South Dakota,,,,,,,,
+Tennessee,,,,,,,,
+Texas,,,,,,,,
+Utah,,,,,,,,
+Vermont,,,,,,,,
+Virginia,,,,,,,,
+Washington,,,,,,,,
+West Virginia,,,,,,,,
+Wisconsin,,,,,,,,
+Wyoming,,,,,,,,

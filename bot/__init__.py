@@ -14,19 +14,23 @@ def create_app():
 
 
 # loading data from csv
-# is there a better place to put this?
-RESOURCE_DATA = {}
+def resource_csv2dict():
+    csv_file = os.path.dirname(__file__)+'/data/resources.csv'
+    resource_dict = {}
 
-with open(os.path.dirname(__file__)+'/data/resources.csv') as f:
-    reader = csv.DictReader(f)
-    for row in reader:
+    if(os.path.exists(csv_file)):
+        with open(csv_file) as f:
+            reader = csv.DictReader(f)
+            for row in reader:
 
-        state_abbr = us.states.lookup(row['state']).abbr
+                state_abbr = us.states.lookup(row['state']).abbr
 
-        RESOURCE_DATA[state_abbr] = {
-            'name_press_assn': row['name_press_assn'],
-            'phone_press_assn': row['phone_press_assn'],
-            'name_atty_gen': row['name_atty_gen'],
-            'phone_atty_gen': row['phone_atty_gen'],
-            'url_reporters_committee': row['url_reporters_committee']
-        }
+                resource_dict[state_abbr] = {
+                    'name_press_assn': row['name_press_assn'],
+                    'phone_press_assn': row['phone_press_assn'],
+                    'name_atty_gen': row['name_atty_gen'],
+                    'phone_atty_gen': row['phone_atty_gen'],
+                    'url_reporters_committee': row['url_reporters_committee']
+                }
+
+    return resource_dict
