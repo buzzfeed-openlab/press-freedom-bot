@@ -2,13 +2,12 @@ from flask import flash, redirect, request, render_template, Response, session
 from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
 from bot import create_app, resource_csv2dict
-from bot.app_config import ADMIN_USER, ADMIN_PASS, SECRET_KEY, \
-                                    TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NO, \
-                                    GDOC_ID
+from bot import config
 from bot.models import Answer
 from bot.database import db
 import twilio.twiml
 from twilio.rest import TwilioRestClient
+import importlib
 import re
 import us
 
@@ -17,6 +16,7 @@ application = create_app()
 
 @application.route("/")
 def index():
+
     return render_template('index.html')
 
 
@@ -101,6 +101,8 @@ def check_auth(username, password):
     """This function is called to check if a username /
     password combination is valid.
     """
+    ADMIN_USER = config.CONFIG_VARS['ADMIN_USER']
+    ADMIN_PASS = config.CONFIG_VARS['ADMIN_PASS']
     return username == ADMIN_USER and password == ADMIN_PASS
 
 def authenticate():
@@ -124,11 +126,33 @@ def reports():
     reports = Answer.query.all()
     return render_template('reports.html', reports=reports)
 
+@application.route('/settings', methods=['GET', 'POST'])
+@requires_auth
+def settings():
+
+    if request.method == 'POST':
+
+        new_config = {
+            "TWILIO_ACCOUNT_SID": request.form['twilio-account-sid'],
+            "TWILIO_AUTH_TOKEN": request.form['twilio-auth-token'],
+            "TWILIO_PHONE_NO": request.form['twilio-phone-no'],
+            "GDOC_ID": request.form['gdoc-id']
+        }
+
+        config.update_config(new_config)
+        importlib.reload(config)
+
+        flash("settings updated!")
+
+    return render_template('settings.html', CONFIG_VARS=config.CONFIG_VARS)
+
+
 @application.route('/grabcsv')
 @requires_auth
 def grab_csv():
     import requests
 
+    GDOC_ID = config.CONFIG_VARS['GDOC_ID']
     url = "https://docs.google.com/spreadsheets/d/{}/export?format=csv".format(GDOC_ID)
     r = requests.get(url)
     data = r.content
@@ -158,5 +182,6 @@ def initialize():
 
 if __name__ == "__main__":
 
-    application.secret_key = SECRET_KEY
-    application.run(debug=True, host='0.0.0.0')
+    application.secret_key = config.CONFIG_VARS['SECRET_KEY']
+    debug = True if config.CONFIG_VARS['DEBUG'] == 'True' else False
+    application.run(debug=debug, host='0.0.0.0')

@@ -1,5 +1,5 @@
 from flask import Flask
-from .app_config import DB_USER, DB_PW, DB_HOST, DB_NAME
+from .config import CONFIG_VARS
 import csv
 import os
 import re
@@ -8,7 +8,7 @@ import us
 def create_app():
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://{0}:{1}@{2}/{3}"\
-                                            .format(DB_USER, DB_PW, DB_HOST, DB_NAME)
+            .format(CONFIG_VARS['DB_USER'], CONFIG_VARS['DB_PW'], CONFIG_VARS['DB_HOST'], CONFIG_VARS['DB_NAME'])
 
     return app
 

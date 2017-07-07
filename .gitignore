@@ -1,4 +1,4 @@
-app_config_secret.json
+config_vars_secret.json
 
 __pycache__
 .DS_Store
