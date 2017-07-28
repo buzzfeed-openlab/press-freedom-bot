@@ -133,9 +133,6 @@ def settings():
     if request.method == 'POST':
 
         new_config = {
-            "TWILIO_ACCOUNT_SID": request.form['twilio-account-sid'],
-            "TWILIO_AUTH_TOKEN": request.form['twilio-auth-token'],
-            "TWILIO_PHONE_NO": request.form['twilio-phone-no'],
             "GDOC_ID": request.form['gdoc-id']
         }
 
